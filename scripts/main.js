@@ -7,14 +7,6 @@ const slideWidth = slides[0].offsetWidth;
 
 let offset = 0;
 
-
-//METHODS
-//children
-//firstElementChild
-//lastElementChild
-//nextElementSibling
-//previousElementSibling
-//insertBefore
 function btnPoll(btn, time) {
     btn.disabled = true;
     setTimeout(function() {
@@ -25,30 +17,12 @@ function btnPoll(btn, time) {
 
 //click right, move slides to right
 btnNext.addEventListener('click', () => {
-
     const firstSlide = track.children[0];
     const lastSlide = track.children[track.children.length - 1];
 
     animaImg(lastSlide, 'right');
 
-    // setTimeout(() => {
-    // lastSlide.remove();
-    // offset = offset + slideWidth;
-    // track.style.transform = 'translateX(' + offset + 'px)';
-    // track.children[0].style.transform = 'translateX(' + offset + 'px)';
-    // track.children[1].style.transform = 'translateX(' + offset + 'px)';
-    // }, 1000);
-
-
-
-
-
     setTimeout(() => {
-        // offset = 0;
-        // track.style.transform = 'translateX(' + offset + 'px)';
-        // track.children[0].style.transform = 'translateX(' + offset + 'px)';
-        // track.children[1].style.transform = 'translateX(' + offset + 'px)';
-
         track.insertBefore(lastSlide, firstSlide);
 
     }, 1000);
